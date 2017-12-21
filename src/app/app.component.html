@@ -1,0 +1,391 @@
+<!--The content below is only a placeholder and can be replaced.-->
+ 
+   
+  <div class="topnavbar"> <!-- topnavbar -->
+    <a class="logo" href="#">
+      <img alt="Logo" src="assets/images/logo.png"/>
+    </a>
+    <div class="search-box">
+      <div class="input-group">
+        <input aria-describedby="basic-addon" class="form-control" placeholder="Search" type="text" />
+        <button class="input-group-addon pointer" id="basic-addon">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+    <div class="user">
+      <div class="links">
+        <a href="#">
+          <img src="assets/images/img1.png">{{fname}}
+        </a>
+      </div>
+      <div class="links">
+        <a href="#">Home</a>
+      </div>
+      <div class="notifications">
+        <div class="links">    <!--change-->
+          <a class="freqnotif" href="#">
+            <i class="fi-torsos"></i>
+          </a>
+        </div>
+        <div class="links">
+          <a class="msgnotif" href="#">
+            <i class="fa fa-comment"></i>
+          </a>
+        </div>
+        <div class="links">
+          <a class="notif" href="#">
+            <i class="fa fa-globe"></i>
+          </a>
+        </div>
+        <div class="links">
+          <a class="helpguide" href="#">
+            <i class="fa fa-question-circle"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div><!-- /topnavbar -->
+   
+  
+  <div class="leftnavbar">  <!--leftnavbar-->
+    <div class="leftnavContainer"> <!--leftnavContainer-->
+      <a href="#">
+        <img src="assets/images/img1.png"/> {{fname}} {{lname}}
+      </a>
+      <a class="activepage" href="#">
+        <img src="http://icons.iconarchive.com/icons/pelfusion/long-shadow-ios7/256/News-icon.png"/> News Feed
+        <span class="counter">
+          <i class="fa fa-ellipsis-h"></i>
+        </span>
+      </a>
+      <a href="#">
+          <img src="http://icons.iconarchive.com/icons/sinisa91g/supernova/72/Messenger-icon.png"/> Messenger
+  		<span class="counter">1</span>
+      </a>
+      
+      <div class="group-content">
+        <h4>explore</h4>
+		<a href="#" *ngFor="let sidenav of sidenavbar">  
+          <img src="{{sidenav.url}}" /> {{sidenav.value}}
+          <span class="counter">{{sidenav.count}}</span>
+        </a>
+	  </div>
+	
+      <div class="group-content">
+        <h4>create</h4>  <!--Change-->
+        <a href="#" style="width:20%;float:left;color:#007bff " *ngFor="let sidenav of sidenavbarbottom">
+          {{sidenav}}
+        </a>
+      </div>
+    </div> <!--//leftnavContainer-->
+  </div> <!-- ///leftnavbar-->
+  
+  
+  
+  
+  <div class="news-feed"> <!--news-feed-->
+    <div class="post"> <!--post-->
+      <ul class="headerpost nav nav-tabs nav-justified">
+        <li style="width:30%;float:left;" *ngFor = "let news of feedPost">  <!--change-->
+          <a href="#">
+            <i class={{news.glyph}}></i>
+            <span>{{news.value}}</span>
+          </a>
+        </li> 
+		<li style="width:1%;float:left;">
+          <a href="#">
+            
+          </a>
+        </li>
+      </ul>
+	  
+	  
+    <div class="headerpost">
+	   <div class="commentpost">
+        <div class="input-group">
+          <a href="#">
+            <img src="assets/images/logo.png" />
+          </a>
+
+          <textarea class="form-control" placeholder="Write something here..."></textarea>
+           
+        </div>
+      </div>
+  	</div>
+   
+      <ul class="newpostfooter nav nav-tabs nav-justified">
+        
+		<li style="width:30%;float:left;padding-left:5px" *ngFor="let comments of comment">
+		<div  class="rounded" style="background-color:#c7bfbf14">
+          <a href="#">
+            <i class={{comments.glyph}}></i>
+            <span>{{comments.value}}</span>
+          </a>
+  		</div>
+        </li>
+	 
+  	  <li style="width:1%;float: left;">
+  	   <div  class="rounded"  >
+          <a href="#">
+          </a>
+  		</div>
+        </li>
+      </ul>
+    </div> <!--/post-->
+	
+	
+    <div class="post" *ngFor = "let post of post"> <!--post-->
+      <div class="headerpost">
+        <a href="#">
+          <img src={{post.url}} />
+          <span class="name">{{post.name}}</span>
+        </a>
+        <span>shared <a href="#">{{post.sharedName}}</a> <a href="#">post</a>.</span>
+        <p>
+          <a class="date" href="#">{{post.time}}</a>
+          <a href="#">
+            <i class="fa fa-globe"></i>
+          </a> </p>
+        <div class="rightsideofpost">
+          <a class="follow" href="#">
+            <i class="fa fa-star"></i>
+          </a>
+          <a class="personpostmenu" href="#">
+            <i class="fa fa-caret-down"></i>
+          </a>
+        </div>
+        
+		</div>
+      <div class="newpost">
+        <div class="postcontent">
+          {{post.content}}
+        </div>
+      </div>
+      <ul class="newpostfooter nav nav-tabs nav-justified">
+        <li style="width:30%;float: left;">
+          <a href="#">
+            <i class="fa fa-thumbs-up"></i>
+            <span>Like</span>
+          </a>
+        </li>
+        <li style="width:30%;float: left;">
+          <a href="#" title="Leave a comment">
+            <i class="fa fa-comment-o"></i>
+            <span>Comment</span>
+          </a>
+        </li>
+        <li style="width:30%;float: left;">
+          <a href="#" title="Send this to friends or post it to your timeline">
+            <i class="fa fa-share"></i>
+            <span>Share</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="likes nav nav-tabs nav-justified">
+        <li>
+          <a href="#">
+            <i class="fa fa-thumbs-up"></i>
+            <span>{{post.like}}</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-comment-o"></i>
+            <span>{{post.comment}}</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-share"></i>
+            <span>{{post.share}}</span>
+          </a>
+        </li>
+      </ul>
+      <div class="commentpost">
+        <div class="input-group">
+          <a href="#">
+            <img src={{post.url2}}/>
+          </a>
+
+          <textarea class="form-control" placeholder="Write a comment..."></textarea>
+          <div class="input-group-btn">
+            <a class="btn btn-default" href="#">
+              <i class="fa fa-smile-o"></i>
+            </a>
+            <a class="btn btn-default" href="#">
+              <i class="fa fa-picture-o"></i>
+            </a>
+            <a class="btn btn-default" href="#">
+              <i class="fa fa-gift"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div> <!--//post-->
+  </div> <!--//news-feed-->
+  
+  
+  
+  
+  <div class="user-feeds">   <!--user-feeds-->
+    <div class="section" style="padding-bottom: 20px;">
+      <h4>
+       Stories
+        <a href="#">
+          <i class="fa fa-question-circle"></i>
+        </a>
+      </h4>
+      <a href="#" *ngFor="let stories of stories"> <!--change-->
+        <img src={{stories}} class="rounded-circle" />
+      </a>
+  	<a href="#"></a>
+    </div>
+	
+	
+    <div class="section">
+      <a href="#">
+        <i class="fa fa-birthday-cake"></i>
+        1 birthday event
+      </a>
+    </div>
+	
+	
+    <div class="section">
+      <h4>
+        Trending
+        
+        <!-- entertainment -->
+        <a href="#" *ngFor = "let glypf of glypf">
+          <i class={{glypf}}></i>
+        </a>
+        
+        <!-- top trends -->
+        <a class="activetrend" href="#">
+          <i class="fa fa-line-chart"></i>
+        </a>
+      </h4>
+      <div class="trend-feed">
+        <ul>
+          <li *ngFor=" let news of news">
+            <a href="#">{{news.nation}}</a>
+            <span>{{news.news}}<span>{{news.from}}</span></span>
+          </li>
+        </ul>
+        <div>
+          <a href="#">
+            <i class="fa fa-caret-down"></i> 
+            See More
+          </a>
+          <a href="#">
+            <i class="fa fa-question"></i> 
+          </a>
+        </div>
+      </div>
+    </div>
+   
+    <div class="section">
+      <h4>
+        Friend Request
+        
+        <a href="#">
+          <i class="fa fa-caret-down"></i>
+        </a>
+        
+      </h4>
+     
+  	<table class="responsive">
+  		<tr *ngFor="let friends of request">
+  		<td colspan="2">
+  		<img src={{friends.img}} style="width:55px;height:55px" />
+  		</td>
+  		<td colspan ="5">
+  		<h4> {{friends.name}}</h4>  
+  		<button type="button" class="btn btn-secondary  btn-sm ">Confirm Friend</button>
+  		</td>
+		</tr>
+  	
+  
+  	</table>
+    </div>
+    <div class="section">
+      <a href="#">English (US)</a> · <a href="#">Tamil</a>· <a href="#">English (UK)</a>
+    </div>
+
+    <div>
+      <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Advertising</a> · <a href="#">Ad Choices</a> · <a href="#">Cookies</a> · <a href="#">More</a>
+      <p>
+        Facebook © 2017
+      </p>
+    </div>
+  </div>
+  
+  
+  
+  
+  <div class="messenger"> <!--messenger-->
+    <ul>
+      <li *ngFor="let msg of msgs">
+        <a href="#" >
+          <img src={{msg.img}} align="left"> 
+          <b>{{msg.name}}</b> <span>{{msg.post}}</span>
+        </a>
+      </li>  
+    </ul>
+    <ul>
+      <h4>Your Pages</h4>
+      <li *ngFor="let page of pages">
+        <a href="#">
+          <img src= {{page.img}} align="left"> 
+          <b>{{page.name}}</b> <span>{{page.count}}</span>
+        </a>
+      </li>
+	  <!--
+      <li>
+        <a href="#">
+          <img src="https://i.imgur.com/5jInimY.jpg" align="left"> 
+          <b>Page Name</b>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="https://i.imgur.com/5jInimY.jpg" align="left"> 
+          <b>Page Name</b> <span>2</span>
+        </a>
+      </li>
+	  -->
+      <h4>Contacts</h4>
+      <li *ngFor = "let contact of contacts">
+        <a href="#">
+          <img src={{contact.img}} align="left"> 
+          <b>{{contact.name}}</b> <i class="fa fa-circle"></i>
+        </a>
+      </li>
+	  <!--
+      <li>
+        <a href="#">
+          <img src="https://i.imgur.com/5jInimY.jpg" align="left"> 
+          <b>First Name</b> <i class="fa fa-circle"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="https://i.imgur.com/5jInimY.jpg" align="left"> 
+          <b>First Name</b> <i class="fa fa-circle"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="https://i.imgur.com/5jInimY.jpg" align="left"> 
+          <b>First Name</b> <i class="fa fa-circle"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="https://i.imgur.com/5jInimY.jpg" align="left"> 
+          <b>First Name</b> <i class="fa fa-circle"></i>
+        </a>
+      </li>
+	  -->
+    </ul>
+  </div> <!--//messenger-->
