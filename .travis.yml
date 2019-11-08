@@ -8,6 +8,7 @@ branches:
   - master
 before_script:
   - npm install -g @angular/cli
+  - npm install -g @angular-devkit/core
 script:
 - ng lint
 - ng build --prod --base-href https://perumalprabhup.github.io/facebookHomeReplica/
